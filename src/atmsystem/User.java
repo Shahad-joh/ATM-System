@@ -10,7 +10,7 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 public class User {
-    // data members
+    // data fields
     private static int step = 1;
     private String firstName;
     private String lastName;
