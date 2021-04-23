@@ -116,7 +116,7 @@ public class User {
 
             return true;
         } catch (Exception e) {
-            System.out.println(e.toString());
+            System.out.println("wrong Enter");
             return false;
         }
     }
@@ -130,5 +130,5 @@ public class User {
             }
         }
     }
-    
+
 }

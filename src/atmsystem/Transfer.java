@@ -16,12 +16,11 @@ public class Transfer {
         if (fromUser.getBalance() >= amount) {
             fromUser.withdraw(amount);
             toUser.Deposit(amount);
-            String check = "" + LocalDateTime.now().withNano(0) + " transfer the amount " + amount + "$ from " + fromUser.getFirstName() + " "
-                    + fromUser.getLastName() + " to " + toUser.getFirstName() + " " + toUser.getLastName();
 
             System.out.println("transfer the amount " + amount + "$ from " + fromUser.getFirstName() + " "
                     + fromUser.getLastName() + " to " + toUser.getFirstName() + " " + toUser.getLastName());
-            transitionHistory.add(check);
+            transitionHistory.add( "" + LocalDateTime.now().withNano(0) + " transfer the amount " + amount + "$ from " + fromUser.getFirstName() + " "
+                    + fromUser.getLastName() + " to " + toUser.getFirstName() + " " + toUser.getLastName());
             fromUser.History.add("send amount " + amount + "$ to " + toUser.getFirstName() + " " + toUser.getLastName());
             toUser.History.add("recive amount " + amount + "$ from " + fromUser.getFirstName() + " " + fromUser.getLastName());
 
@@ -45,5 +44,5 @@ public class Transfer {
         }
     }
 
-    
+
 }

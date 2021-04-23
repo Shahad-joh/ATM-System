@@ -1,4 +1,4 @@
-/*
+hu/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -31,7 +31,7 @@ public class ATMSystem {
         Boolean adminFlage = false;
         int i = 0;
         // find the admin in the database
-        for (; i < admins.size(); i++) {
+        for (int i = 0 ; i < admins.size(); i++) {
             if (admins.get(i).getID() == id && admins.get(i).getPinNumber().equals(pin)) {
                 adminFlage = true;
                 break;
@@ -93,7 +93,7 @@ public class ATMSystem {
             }
         }
     }
-//  user scenario 
+//  user scenario
 
     public static void loginAsUser() throws Exception {
         Scanner in = new Scanner(System.in);
@@ -105,7 +105,7 @@ public class ATMSystem {
         String pin = in.nextLine();
         Boolean userFlage = false;
         int index = 0;
-        for (; index < users.size(); index++) {
+        for (index = 0 ; index < users.size(); index++) {
             if (users.get(index).getID() == id && users.get(index).getPinNumber().equals(pin)) {
                 userFlage = true;
                 break;
@@ -127,7 +127,7 @@ public class ATMSystem {
                 switch (ch) {
                     case 1: {
                         System.out.println("********** withdraw amount of money :");
-                        double amount = in.nextInt();
+                        double amount = in.nextDouble();
                         in.nextLine();
                         // process if the user send negative value to withdraw
                         if (amount >= 0) {
@@ -153,7 +153,7 @@ public class ATMSystem {
                     }
                     case 3: {
                         System.out.println("********** money amount : ");
-                        double amount = in.nextInt();
+                        double amount = in.nextDouble();
                         in.nextLine();
                         if (amount > 0) {
                             while (true) {
@@ -162,7 +162,7 @@ public class ATMSystem {
                                 in.nextLine();
                                 int reciverIndex = 0;
                                 Boolean reciverFlage = false;
-                                for (; reciverIndex < users.size(); reciverIndex++) {
+                                for (reciverIndex = 0; reciverIndex < users.size(); reciverIndex++) {
                                     if (users.get(reciverIndex).getID() == reciverId) {
                                         reciverFlage = true;
                                         break;
@@ -215,8 +215,8 @@ public class ATMSystem {
             System.out.println("");
             while (!stop) {
 
-                Admin adman1 = new Admin("Reem", "Almutwry", "123");
-                Admin adman2 = new Admin("albandary", "Al", "123");
+                Admin adman1 = new Admin("Reem", "Almutiari", "123");
+                Admin adman2 = new Admin("albandary", "bin ibrahim", "123");
                 User user1 = new User("Shahad", "Aljohani", "123");
                 User user2 = new User("Sadeam", "osama", "123");
                 admins.add(adman1);
@@ -249,7 +249,7 @@ public class ATMSystem {
             }
 
         } catch (Exception e) {
-            e.printStackTrace();
+           System.out.println("wrong Enter ");
         }
     }
 }

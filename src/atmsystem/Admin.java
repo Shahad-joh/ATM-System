@@ -6,16 +6,13 @@
 package atmsystem;
 import java.util.Scanner;
 public class Admin {
-    
+
     private static int step = 1;
     private String firstName;
     private String lastName;
     private String pinNumber;
     private int ID;
 
-    public int getID() {
-        return ID;
-    }
 
     public Admin() {
         this.ID = step++;
@@ -29,6 +26,9 @@ public class Admin {
         this.lastName = lastName;
         this.pinNumber = pinNumber;
         this.ID = step++;
+    }
+    public int getID() {
+        return ID;
     }
 
     public String getFirstName() {
@@ -170,7 +170,7 @@ public class Admin {
 
             }
         } catch (Exception e) {
-            System.out.println(e.toString());
+            System.out.println("wrong Enter");
             return null;
         }
 
